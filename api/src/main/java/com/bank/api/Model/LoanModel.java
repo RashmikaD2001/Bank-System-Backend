@@ -16,9 +16,11 @@ public class LoanModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int loanId;
     @OneToOne
-    @JoinColumn(name = "user_nic")
+    @JoinColumn(name = "user_nic", referencedColumnName = "nic")
     private UserModel user;
+    @Enumerated(EnumType.STRING)
     private LoanType type;
     private double amount;
+    private int loanTerm;
     private boolean isLoanApproved;
 }

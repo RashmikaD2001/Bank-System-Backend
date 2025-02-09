@@ -18,4 +18,13 @@ public class UserModel {
     private String lname;
     private String email;
     private String telNo;
+    private int noOfDependents;
+    private boolean isGraduated;
+    private boolean isSelfEmployed;
+    private double annualIncome;
+    private double creditScore;
+    private double residentialAssestValue;
+    private double commercialAssestValue;
+    private double luxuryAssestValue;
+    private double bankAssestValue;
 }

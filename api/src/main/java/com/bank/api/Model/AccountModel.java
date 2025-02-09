@@ -17,8 +17,9 @@ public class AccountModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int accId;
     @OneToOne
-    @JoinColumn(name = "user_nic")
+    @JoinColumn(name = "user_nic", referencedColumnName = "nic")
     private UserModel user;
+    @Enumerated(EnumType.STRING)
     private AccountType accountType;
     private double balance;
 }
