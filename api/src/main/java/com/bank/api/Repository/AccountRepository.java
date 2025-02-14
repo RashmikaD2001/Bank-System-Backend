@@ -10,4 +10,10 @@ import java.util.List;
 public interface AccountRepository extends JpaRepository<AccountModel, Integer> {
 
     List<AccountModel> findAccountByUserNIC(String nic);
+
+    // Find account not active
+    List<AccountModel> findByIsAccountActiveFalse();
+
+    // Find account active
+    List<AccountModel> findByIsAccountActiveTrue();
 }

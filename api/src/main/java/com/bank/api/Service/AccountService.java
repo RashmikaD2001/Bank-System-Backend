@@ -42,4 +42,14 @@ public class AccountService {
     public List<AccountModel> getAccountUserNIC(String nic) {
         return accountRepository.findAccountByUserNIC(nic);
     }
+
+    // New method to get all inactive accounts
+    public List<AccountModel> getUnpaidLoans() {
+        return accountRepository.findByIsAccountActiveFalse();
+    }
+
+    // New method to get all active accounts
+    public List<AccountModel> getPaidLoans() {
+        return accountRepository.findByIsAccountActiveFalse();
+    }
 }

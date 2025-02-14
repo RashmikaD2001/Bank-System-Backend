@@ -1,8 +1,10 @@
 package com.bank.api.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -19,12 +21,19 @@ public class UserModel {
     private String email;
     private String telNo;
     private int noOfDependents;
-    private boolean isGraduated;
-    private boolean isSelfEmployed;
+    private boolean graduated;
+    private boolean selfEmployed;
     private double annualIncome;
     private double creditScore;
-    private double residentialAssestValue;
-    private double commercialAssestValue;
-    private double luxuryAssestValue;
-    private double bankAssestValue;
+    private double residentialAssetValue;
+    private double commercialAssetValue;
+    private double luxuryAssetValue;
+    private double bankAssetValue;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<LoanModel> loans = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<AccountModel> accounts = new ArrayList<>();
 }
+

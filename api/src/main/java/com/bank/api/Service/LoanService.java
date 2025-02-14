@@ -42,4 +42,22 @@ public class LoanService {
     public List<LoanModel> getLoansByUserNIC(String nic) {
         return loanRepository.findLoansByUser_NIC(nic);
     }
+
+    // New method to get all unpaid loans
+    public List<LoanModel> getUnpaidLoans() {
+        return loanRepository.findByIsLoanPaidFalse();
+    }
+
+    // New method to get all paid loans
+    public List<LoanModel> getPaidLoans() {
+        return loanRepository.findByIsLoanPaidTrue();
+    }
+
+    public List<LoanModel> getApprovedLoans() {
+        return loanRepository.findByIsLoanApprovedTrue();
+    }
+
+    public List<LoanModel> getRejectedLoans() {
+        return loanRepository.findByIsLoanPaidFalse();
+    }
 }

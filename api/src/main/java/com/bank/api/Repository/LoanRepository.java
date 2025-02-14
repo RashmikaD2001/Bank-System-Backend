@@ -10,4 +10,14 @@ import java.util.List;
 public interface LoanRepository extends JpaRepository<LoanModel, Integer> {
 
     List<LoanModel> findLoansByUser_NIC(String nic);
+
+    // Find unpaid loans
+    List<LoanModel> findByIsLoanPaidFalse();
+
+    // Find paid loans
+    List<LoanModel> findByIsLoanPaidTrue();
+
+    List<LoanModel> findByIsLoanApprovedFalse();
+
+    List<LoanModel> findByIsLoanApprovedTrue();
 }
