@@ -3,6 +3,7 @@ package com.bank.api.Model;
 
 import com.bank.api.Enum.AccountType;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Positive;
 import lombok.*;
 
 @Entity
@@ -23,6 +24,7 @@ public class AccountModel {
 
     @Enumerated(EnumType.STRING)
     private AccountType accountType;
+    @Positive(message = "Balance must be a positive number")
     private double balance;
     private boolean isAccountActive;
 }

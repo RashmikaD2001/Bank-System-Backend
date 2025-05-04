@@ -1,0 +1,5 @@
+# Ignore Jupyter notebook
+model/model.ipynb
+
+# Ignore the entire data folder
+data/
