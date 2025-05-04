@@ -1,9 +1,9 @@
-from chatbot_model import model
+from ..model.chatbot_model import model
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import uvicorn
 import logging
-
+import requests
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -43,7 +43,7 @@ class ChatResponse(BaseModel):
 async def chat_endpoint(request: ChatRequest):
     try:
         # Process the user input with your model
-        response = model.generate_response(request.user_input, conversation_id=request.conversation_id)
+        response = model.run(request.user_input)
         
         # Create response object
         chat_response = ChatResponse(
