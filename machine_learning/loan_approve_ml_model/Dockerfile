@@ -4,7 +4,6 @@ WORKDIR /app
 # Copy all required files: model, API, and optional data
 COPY model/ ./model/
 COPY api/ ./api/
-COPY data/ ./data/
 
 # Install dependencies
 RUN pip install --upgrade pip && pip install -r api/requirement.txt
