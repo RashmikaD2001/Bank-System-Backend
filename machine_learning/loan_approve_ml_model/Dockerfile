@@ -7,7 +7,7 @@ COPY api/ ./api/
 COPY data/ ./data/
 
 # Install dependencies
-RUN pip install --upgrade pip && pip install -r api/requirements.txt
+RUN pip install --upgrade pip && pip install -r api/requirement.txt
 
 # Expose the port
 EXPOSE 8001

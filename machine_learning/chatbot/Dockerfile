@@ -6,7 +6,7 @@ COPY model/ ./model/
 COPY api/ ./api/
 
 # Install dependencies
-RUN pip install --upgrade pip && pip install -r api/requirements.txt
+RUN pip install --upgrade pip && pip install -r api/requirement.txt
 
 # Expose the port your API runs on (assuming 8000)
 EXPOSE 8000
