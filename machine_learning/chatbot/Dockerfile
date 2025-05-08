@@ -10,7 +10,8 @@ COPY model/ ./model/
 COPY api/ ./api/
 
 # Install dependencies
-RUN pip install --upgrade pip && pip install -r api/requirement.txt
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose the port your API runs on (assuming 8000)
 EXPOSE 8000

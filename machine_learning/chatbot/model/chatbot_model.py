@@ -8,7 +8,8 @@ from langchain.memory import ConversationBufferMemory
 # Load environment variables
 load_dotenv()
 HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
-os.environ['HUGGINGFACEHUB_API_TOKEN'] = HUGGINGFACEHUB_API_TOKEN
+if not HUGGINGFACEHUB_API_TOKEN:
+    raise EnvironmentError("HUGGINGFACEHUB_API_TOKEN is not set in environment.")
 
 # Initialize the model
 conv_model = HuggingFaceHub(
