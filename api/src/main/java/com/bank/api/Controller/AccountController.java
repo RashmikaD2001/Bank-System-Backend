@@ -5,6 +5,7 @@ import com.bank.api.Service.AccountService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/account")
@@ -22,7 +23,7 @@ public class AccountController {
     }
 
     @GetMapping("/{id}")
-    public AccountModel getAccountById(@PathVariable int id) {
+    public Optional<AccountModel> getAccountById(@PathVariable int id) {
         return accountService.getAccountById(id);
     }
 

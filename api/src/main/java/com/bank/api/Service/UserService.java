@@ -2,9 +2,11 @@ package com.bank.api.Service;
 
 import com.bank.api.Model.UserModel;
 import com.bank.api.Repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -19,8 +21,8 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public UserModel getUserById(String id) {
-        return userRepository.findById(id).get();
+    public Optional<UserModel> getUserById(String id) {
+        return userRepository.findById(id);
     }
 
     public void saveUser(UserModel user) {

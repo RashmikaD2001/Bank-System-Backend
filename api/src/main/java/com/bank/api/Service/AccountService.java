@@ -5,6 +5,7 @@ import com.bank.api.Repository.AccountRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AccountService {
@@ -19,8 +20,8 @@ public class AccountService {
         return accountRepository.findAll();
     }
 
-    public AccountModel getAccountById(int id) {
-        return accountRepository.findById(id).get();
+    public Optional<AccountModel> getAccountById(int id) {
+        return accountRepository.findById(id);
     }
 
     public void addAccount(AccountModel account) {

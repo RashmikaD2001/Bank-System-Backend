@@ -2,9 +2,11 @@ package com.bank.api.Controller;
 
 import com.bank.api.Model.UserModel;
 import com.bank.api.Service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/user")
@@ -22,7 +24,8 @@ public class UserController {
     }
 
     @GetMapping("/{nic}")
-    public UserModel getUserByNic(@PathVariable String nic) {
+    public Optional<UserModel> getUserByNic(@PathVariable String nic) {
+
         return userService.getUserById(nic);
     }
 

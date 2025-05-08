@@ -5,6 +5,7 @@ import com.bank.api.Repository.LoanRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class LoanService {
@@ -19,8 +20,8 @@ public class LoanService {
         return loanRepository.findAll();
     }
 
-    public LoanModel getLoanById(int id) {
-        return loanRepository.findById(id).get();
+    public Optional<LoanModel> getLoanById(int id) {
+        return loanRepository.findById(id);
     }
 
     public void addLoan(LoanModel loan) {

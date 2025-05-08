@@ -5,6 +5,7 @@ import com.bank.api.Service.LoanService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/loan")
@@ -42,7 +43,7 @@ public class LoanController {
     }
 
     @GetMapping("/{id}")
-    public LoanModel getLoanById(@PathVariable int id){
+    public Optional<LoanModel> getLoanById(@PathVariable int id){
         return loanService.getLoanById(id);
     }
 
