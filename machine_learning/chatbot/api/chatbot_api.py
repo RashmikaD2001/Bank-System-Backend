@@ -1,4 +1,4 @@
-from ..model.chatbot_model import model
+from model.chatbot_model import model
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import uvicorn
