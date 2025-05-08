@@ -1,6 +1,7 @@
 import os
 from langchain_core.prompts import PromptTemplate
 from langchain.chains import LLMChain
+from langchain_community.llms import HuggingFaceHub
 from langchain_huggingface import HuggingFaceEndpoint
 from dotenv import load_dotenv
 from langchain.memory import ConversationBufferMemory
