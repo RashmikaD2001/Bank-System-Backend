@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from ..model.ml_model import approve_loan
+from model.ml_model import approve_loan
 
 app = FastAPI()
 
