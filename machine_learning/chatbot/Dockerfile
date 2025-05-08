@@ -6,7 +6,7 @@ ENV PYTHONPATH=/app
 # Copy app files
 COPY model/ ./model/
 COPY api/ ./api/
-COPY requirements.txt .
+COPY api/requirements.txt .
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
