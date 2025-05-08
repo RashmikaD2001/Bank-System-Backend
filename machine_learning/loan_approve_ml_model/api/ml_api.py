@@ -1,13 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-import sys
-import os
-
-# Add the parent directory to the path to make it a proper package
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-# Now import using absolute import
-from model.ml_model import approve_loan
+from ..model.ml_model import approve_loan
 
 app = FastAPI()
 
