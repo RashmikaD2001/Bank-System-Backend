@@ -14,9 +14,11 @@ if not HUGGINGFACEHUB_API_TOKEN:
 
 # Initialize the model
 conv_model = HuggingFaceEndpoint(
-    repo_id="AdaptLLM/finance-LLM",
-    model_kwargs={"temperature": 0.6, "max_new_tokens": 2000}
+    repo_id="AdaptLLM/finance-chatbot",
+    temperature=0.5,
+    max_new_tokens=2000
 )
+
 
 
 # Initialize template
