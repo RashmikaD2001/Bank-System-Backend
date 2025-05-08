@@ -3,3 +3,7 @@ model/model.ipynb
 
 # Ignore the entire data folder
 data/
+
+api/__pycache__
+
+model/__pycache__
