@@ -1,7 +1,7 @@
 import os
 from langchain_core.prompts import PromptTemplate
 from langchain.chains import LLMChain
-from langchain_community.llms import HuggingFaceHub
+from langchain_huggingface import HuggingFaceEndpoint
 from dotenv import load_dotenv
 from langchain.memory import ConversationBufferMemory
 
@@ -12,10 +12,11 @@ if not HUGGINGFACEHUB_API_TOKEN:
     raise EnvironmentError("HUGGINGFACEHUB_API_TOKEN is not set in environment.")
 
 # Initialize the model
-conv_model = HuggingFaceHub(
+conv_model = HuggingFaceEndpoint(
     repo_id="AdaptLLM/finance-LLM",
     model_kwargs={"temperature": 0.6, "max_new_tokens": 2000}
 )
+
 
 # Initialize template
 template = "You are a helpful AI assistant at bank. You have to help users at bank to make efficient their work by completing the query provided by the user: {query}"
