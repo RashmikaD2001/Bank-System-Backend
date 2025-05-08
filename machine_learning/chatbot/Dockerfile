@@ -1,6 +1,8 @@
 FROM python:3.12-slim
 WORKDIR /app
 
+ENV PYTHONPATH=/app
+
 # Accept API token as build arg and set env variable
 ARG HUGGINGFACEHUB_API_TOKEN
 ENV HUGGINGFACEHUB_API_TOKEN=${HUGGINGFACEHUB_API_TOKEN}
