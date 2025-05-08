@@ -25,7 +25,6 @@ public class UserController {
 
     @GetMapping("/{nic}")
     public Optional<UserModel> getUserByNic(@PathVariable String nic) {
-
         return userService.getUserById(nic);
     }
 

@@ -54,7 +54,8 @@ public class LoanService {
         return loanRepository.findByIsLoanApprovedTrue();
     }
 
+    // FIX: Changed to call the correct repository method
     public List<LoanModel> getRejectedLoans() {
-        return loanRepository.findByIsLoanPaidFalse();
+        return loanRepository.findByIsLoanApprovedFalse();
     }
 }

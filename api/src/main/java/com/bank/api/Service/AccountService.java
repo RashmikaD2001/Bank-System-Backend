@@ -40,13 +40,14 @@ public class AccountService {
         return accountRepository.findAccountByUserNic(nic);
     }
 
-    // New method to get all inactive accounts
-    public List<AccountModel> getUnpaidLoans() {
+    // FIX: Renamed methods and corrected the repository calls
+    // Method to get all inactive accounts
+    public List<AccountModel> getInactiveAccounts() {
         return accountRepository.findByIsAccountActiveFalse();
     }
 
-    // New method to get all active accounts
-    public List<AccountModel> getPaidLoans() {
-        return accountRepository.findByIsAccountActiveFalse();
+    // Method to get all active accounts
+    public List<AccountModel> getActiveAccounts() {
+        return accountRepository.findByIsAccountActiveTrue();
     }
 }
