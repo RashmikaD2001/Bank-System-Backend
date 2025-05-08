@@ -16,23 +16,21 @@ conv_model = HuggingFaceHub(
     model_kwargs={"temperature": 0.6, "max_new_tokens": 2000}
 )
 
-# Initialize memory
-memory = ConversationBufferMemory()
-
+# Initialize template
 template = "You are a helpful AI assistant at bank. You have to help users at bank to make efficient their work by completing the query provided by the user: {query}"
-
 prompt = PromptTemplate(
-    template = template,
-    input_variable = ['query']
+    template=template,
+    input_variables=["query"]  # Fixed: 'input_variables' instead of 'input_variable'
 )
 
-def model():
+def get_model():
+    # Initialize memory
+    memory = ConversationBufferMemory(memory_key="chat_history")
     
     conv_chain = LLMChain(
-        llm = conv_model,
-        prompt = prompt,
+        llm=conv_model,
+        prompt=prompt,
         memory=memory,
-        verbose = True
+        verbose=True
     )
-
     return conv_chain

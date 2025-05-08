@@ -32,15 +32,11 @@ public class AccountService {
     }
 
     public void updateAccount(AccountModel account) {
-        if(getAccountById(account.getAccId()) != null) {
-            accountRepository.save(account);
-        }else{
-            throw new RuntimeException("No account for given id " + account.getAccId());
-        }
+        accountRepository.save(account);
     }
 
     public List<AccountModel> getAccountUserNIC(String nic) {
-        return accountRepository.findAccountByUserNIC(nic);
+        return accountRepository.findAccountByUserNic(nic);
     }
 
     // New method to get all inactive accounts

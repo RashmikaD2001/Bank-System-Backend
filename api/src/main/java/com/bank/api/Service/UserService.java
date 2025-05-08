@@ -32,10 +32,6 @@ public class UserService {
     }
 
     public void updateUser(UserModel user) {
-        if (getUserById(user.getNic()) != null){
-            userRepository.save(user);
-        }else{
-            throw new RuntimeException("No user with for given nic " + user.getNic());
-        }
+        userRepository.save(user);
     }
 }

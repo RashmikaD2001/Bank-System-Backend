@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface LoanRepository extends JpaRepository<LoanModel, Integer> {
 
-    List<LoanModel> findLoansByUser_NIC(String nic);
+    List<LoanModel> findLoansByUser_Nic(String nic);
 
     // Find unpaid loans
     List<LoanModel> findByIsLoanPaidFalse();

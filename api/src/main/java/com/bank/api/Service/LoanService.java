@@ -32,15 +32,11 @@ public class LoanService {
     }
 
     public void updateLoan(LoanModel loan) {
-        if(getLoanById(loan.getLoanId()) != null) {
-            loanRepository.save(loan);
-        }else{
-            throw new RuntimeException("No loan for given id " + loan.getLoanId());
-        }
+        loanRepository.save(loan);
     }
 
     public List<LoanModel> getLoansByUserNIC(String nic) {
-        return loanRepository.findLoansByUser_NIC(nic);
+        return loanRepository.findLoansByUser_Nic(nic);
     }
 
     // New method to get all unpaid loans
