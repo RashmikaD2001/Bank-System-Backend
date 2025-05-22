@@ -2,6 +2,8 @@ package com.bank.api.Model;
 
 import com.bank.api.Enum.LoanType;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.*;
 
 @Entity
@@ -20,7 +22,9 @@ public class LoanModel {
     private UserModel user;
     @Enumerated(EnumType.STRING)
     private LoanType type;
+    @Positive
     private double amount;
+    @Positive
     private int loanTerm;
     private boolean isLoanApproved;
     private boolean isLoanPaid;

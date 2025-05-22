@@ -30,10 +30,10 @@ if __name__ == "__main__":
         "no_of_dependents": 2,
         "education": 1,
         "self_employed": 0,
-        "income_annum": 9600000,
+        "income_annum": 0,
         "loan_amount": 29900000,
         "loan_term": 12,
-        "cibil_score": 778,
-        "Assets": 50700000
+        "cibil_score": 0,
+        "Assets": 0
     }
     print(approve_loan(raw_input))

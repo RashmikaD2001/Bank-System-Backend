@@ -3,6 +3,7 @@ package com.bank.api.Model;
 
 import com.bank.api.Enum.AccountType;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.*;
 
 @Entity
@@ -21,6 +22,7 @@ public class AccountModel {
     private UserModel user;
     @Enumerated(EnumType.STRING)
     private AccountType accountType;
+    @PositiveOrZero
     private double balance;
     private boolean isAccountActive;
 
